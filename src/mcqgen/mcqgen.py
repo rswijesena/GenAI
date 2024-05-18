@@ -16,12 +16,15 @@ from langchain.chains import SequentialChain
 # Load environment variables from the .env file
 load_dotenv()
 
-# Access the environment variables just like you would with os.environ
-key = os.getenv("OPENAI_API_KEY")
-if (st.secrets["OPENAI_API_KEY"] == None):
-    key = os.getenv("OPENAI_API_KEY")
-else:
-    key = st.secrets["OPENAI_API_KEY"]
+# # Access the environment variables just like you would with os.environ
+# key = os.getenv("OPENAI_API_KEY")
+# if (st.secrets["OPENAI_API_KEY"] == None):
+#     key = os.getenv("OPENAI_API_KEY")
+# else:
+#     key = st.secrets["OPENAI_API_KEY"]
+
+
+key = st.secrets.openaiDetails.key_var
 
 
 llm = ChatOpenAI(openai_api_key=key,model_name="gpt-4o", temperature=0.3)
