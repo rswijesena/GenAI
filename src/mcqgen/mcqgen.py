@@ -24,7 +24,7 @@ load_dotenv()
 #     key = st.secrets["OPENAI_API_KEY"]
 
 
-key = st.secrets.openaiDetails.key_var
+key = st.secrets["openai_api_key"]
 
 
 llm = ChatOpenAI(openai_api_key=key,model_name="gpt-4o", temperature=0.3)
